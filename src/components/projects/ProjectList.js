@@ -1,13 +1,12 @@
 import React from "react";
 import ProjectSummary from "./ProjectSummary";
 
-function ProjectList() {
+function ProjectList({ segun }) {
   return (
     <div className="project-list section">
-      <ProjectSummary />
-      <ProjectSummary />
-      <ProjectSummary />
-      <ProjectSummary />
+      {segun.map(project => {
+        return <ProjectSummary project={project} key={project.id} />;
+      })}
     </div>
   );
 }
